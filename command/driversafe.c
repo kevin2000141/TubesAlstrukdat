@@ -35,16 +35,16 @@ int main(){
  //        }
  //    }
 
-	CreateStackEmpty(&(FoodStack(P)));
-	CreateStackEmpty(&(Hand(P)));
-	Posisi(P).X = 0;
-	Posisi(P).Y = 0;
-	Room(P) = 0;
-	strcpy(Name(P)," ");
-	Money(P) = 0;
-	Life(P) = 0;
-	Time(P) = 0;
-	CreateEmpty(&AntrianLuar,10);
+	// CreateStackEmpty(&(FoodStack(P)));
+	// CreateStackEmpty(&(Hand(P)));
+	// Posisi(P).X = 0;
+	// Posisi(P).Y = 0;
+	// Room(P) = 0;
+	// strcpy(Name(P)," ");
+	// Money(P) = 0;
+	// Life(P) = 0;
+	// Time(P) = 0;
+	// CreateEmpty(&AntrianLuar,10);
 
 	Load(&P, &AntrianLuar, &ruangan);
 	printf("Name: %s\n", Name(P));
