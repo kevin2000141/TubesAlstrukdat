@@ -5,6 +5,7 @@
 #include "../ADT/mesinkar.h"
 #include "../ADT/boolean.h"
 #include "../ADT/stackt.h"
+#include "../ADT/queue.h"
 #include "SaveLoad.h"
 
 // (int)strtol(<string>, (char **)NULL, 10);
@@ -17,6 +18,7 @@ void Load (Player *P, Queue *AntrianLuar, ruang *ruangan, arrayC *arrayCust, Daf
     int i,j,N;
     KataString test;
     boolean koma;
+    CreateEmpty(AntrianLuar,10);
     // char Nama[NMax+1];
     // int Money;
     // int Life;
