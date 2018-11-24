@@ -2,10 +2,10 @@ Name
 Louis 
  
 Position
-250,323
+5,5
 
 Room
-4
+1
 
 Money 
 500 
@@ -14,36 +14,36 @@ Life
 2 
  
 Time 
-50 
+0 
  
 Room1 
 - C - - - - - - 
-C G C - - C H C 
+C 1 C - - X 2 X 
 - C - - - - - - 
 - - - - - - - - 
 - - - - - - - - 
-- X - - - - - - 
-X I X - - X J X 
-- X - - - - - - 
+- C - - - - - - 
+X 3 X - - X 4 X 
+- C - - - - - - 
  
 Room2 
-- C - - - - - - 
-- K - - - C L C 
-- C - - - - - - 
+- X - - - - - - 
+- 5 - - - X 6 X 
+- X - - - - - - 
 - - - - - - - - 
 - - - - - - - - 
 - X - - - - - - 
-X M X - - X N X 
+X 7 X - - X 8 X 
 - X - - - - - - 
  
 Room3 
-- C - - - - - - 
-- O - - - C P C 
-- C - - - - - - 
+- X - - - - - - 
+- 9 - - - X A X 
+- X - - - - - - 
 - - - - - - - - 
 - - - - - - - - 
 - X - - - - - - 
-X Q X - - X R X 
+X B X - - X D X 
 - X - - - - - -  
 
 Kitchen 
@@ -51,24 +51,53 @@ M - - - - - - T
 M - P - - - - - 
 M - - - - - - - 
 M - - - - - - - 
-M - - M M - - - 
+M - - M M M - - 
 M - - - - - - - 
 M - - - - - - - 
 M - - M M M M M 
 
 AntrianLuar
-jumlah, patience, qpatience, order, isi
+8
+4 60 30 Nasi_Ayam_Goreng
+2 53 30 Banana_Split
+2 53 30 Sundae
+2 53 30 Nasi_Telur_Dadar
+2 53 30 Burger
+2 53 30 Hot_Dog
+2 53 30 Spaghetti_Bolognese
+2 53 30 Spaghetti_Carbonara
 
 Customer
-jumlah, patience, qpatience, order, isi
+4 60 30 Nasi_Ayam_Goreng
+0 0 0 -
+2 76 30 Banana_Split
+0 0 0 -
+0 0 0 -
+0 0 0 -
+0 0 0 -
+0 0 0 -
+0 0 0 -
+0 0 0 -
+0 0 0 -
+0 0 0 -
 
 Order
-Burger, 2
-orderan, meja
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
 
 FoodStack
-Burger, Sundae
+Burger Sundae
 
 Hand
-Garpu, Piring
+Garpu Piring
 .

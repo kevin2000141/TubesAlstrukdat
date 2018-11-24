@@ -9,6 +9,8 @@
 
 // (int)strtol(<string>, (char **)NULL, 10);
 
+
+
 void Load (Player *P, Queue *AntrianLuar, ruang *ruangan){
     // typedef char peta[9][9];
     // peta ruang[5];
@@ -19,8 +21,6 @@ void Load (Player *P, Queue *AntrianLuar, ruang *ruangan){
     // int Money;
     // int Life;
     // int Time;
-    
-
     STARTKATA();
     while(CC != MARK){
         if (strcmp(CKata.TabKata, "Name") == 0){
