@@ -6,7 +6,7 @@
 
 void Load(Player *P, Queue *AntrianLuar, ruang *ruangan, arrayC *arrayCust, DaftarO *DaftarOrder);
 
-void Save ();
+void Save(Player P, Queue AntrianLuar, ruang ruangan, arrayC arrayCust, DaftarO DaftarOrder);
 
 
 #endif
