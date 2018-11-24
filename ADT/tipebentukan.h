@@ -205,8 +205,16 @@ typedef addrNode BinTree;
 Queue AntrianLuar; //antrian di luar
 BinTree Resep;
 POINT DaftarMeja[5]; //Letak koordinat dari meja
-KataString DaftarOrder[13]; //Daftar makanan yang dipesan, meja sesuai indeks
-Customer arrayCust[13]; //Salinan customer ke meja
+typedef struct{
+	KataString Daftar[13]; //Daftar makanan yang dipesan, meja sesuai indeks
+} DaftarO;
+DaftarO DaftarOrder; 
+#define DaftarOrder1(a,i) (a).Daftar[i]
+typedef struct {
+	Customer Cust[13]; //Salinan customer ke meja
+} arrayC;
+arrayC arrayCust;
+#define arrayCust1(a,i) (a).Cust[i]
 typedef struct {
 	char ruanganan[5][9][9];
 } ruang;

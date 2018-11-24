@@ -96,8 +96,12 @@ Order
 -
 
 FoodStack
-Burger Sundae
+2
+Burger 
+Sundae
 
 Hand
-Garpu Piring
+2
+Garpu 
+Piring
 .

@@ -18,6 +18,8 @@ int main(){
 	Player P;
 	Queue AntrianLuar;
 	ruang ruangan;
+	DaftarO DaftarOrder; 
+	arrayC arrayCust;
 	for (i = 1; i<9; i++){
         for (j = 1; j<9; j++){
             Ruang(ruangan,1,i,j) = '-';
@@ -46,7 +48,7 @@ int main(){
 	// Time(P) = 0;
 	// CreateEmpty(&AntrianLuar,10);
 
-	Load(&P, &AntrianLuar, &ruangan);
+	Load(&P, &AntrianLuar, &ruangan, &arrayCust, &DaftarOrder);
 	printf("Name: %s\n", Name(P));
     printf("Position: %d,%d\n", Posisi(P).X, Posisi(P).Y);
     printf("Money: %d\n", Money(P));

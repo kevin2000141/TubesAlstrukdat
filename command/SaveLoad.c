@@ -11,10 +11,10 @@
 
 
 
-void Load (Player *P, Queue *AntrianLuar, ruang *ruangan){
+void Load (Player *P, Queue *AntrianLuar, ruang *ruangan, arrayC *arrayCust, DaftarO *DaftarOrder){
     // typedef char peta[9][9];
     // peta ruang[5];
-    int i,j;
+    int i,j,N;
     KataString test;
     boolean koma;
     // char Nama[NMax+1];
@@ -137,13 +137,6 @@ void Load (Player *P, Queue *AntrianLuar, ruang *ruangan){
                     i++;
                 }
             }
-            // printf("Ruang 1: \n");
-            // for(i=1;i<=8;i++){
-            //     for(j=1;j<=8;j++){
-            //         printf("%c ",*ruangan1[i][j]);
-            //     }
-            //     printf("\n");
-            // }
         }
         else if (strcmp(CKata.TabKata, "Room2") == 0){
             while (CC == ' ' || CC == '\n'){    
@@ -163,13 +156,6 @@ void Load (Player *P, Queue *AntrianLuar, ruang *ruangan){
                     i++;
                 }
             }
-            // printf("Ruang 2: \n");
-            // for(i=1;i<=8;i++){
-            //     for(j=1;j<=8;j++){
-            //         printf("%c ",*ruangan2[i][j]);
-            //     }
-            //     printf("\n");
-            // }
         }
         else if (strcmp(CKata.TabKata, "Room3") == 0){
             while (CC == ' ' || CC == '\n'){    
@@ -190,20 +176,172 @@ void Load (Player *P, Queue *AntrianLuar, ruang *ruangan){
                 }
             }
         }
-        // else if (strcmp(CKata.TabKata, "FoodStack") == 0){
-        //     while (CC == ' ' || CC == '\n'){    
-        //         ADV();
-        //     }
-        //     ADVKATA();
-        //     Push(&(FoodStack(*P)),CKata.TabKata);
-        //     while (CC == ','){
-        //         while (CC == ' ' || CC == '\n'){    
-        //             ADV();
-        //         }
-        //         ADVKATA();
-        //         Push(&(FoodStack(*P)),CKata.TabKata);
-        //     }
-        // }
+        else if (strcmp(CKata.TabKata, "AntrianLuar") == 0){
+            while (CC == ' ' || CC == '\n'){    
+                ADV();
+            }
+            ADVKATA();
+            N = 0;
+            for (i = 0; i <= CKata.Length-1; i++){
+                N *= 10;
+                N += (int)CKata.TabKata[i] - 48;
+            }
+            if (N != 0){
+                Head(*AntrianLuar) = 1;
+                for (i = 1; i <= N; i++){
+                    Tail(*AntrianLuar) = i;
+                    while (CC == ' ' || CC == '\n'){    
+                        ADV();
+                    }
+                    ADVKATA();
+                    InfoTail(*AntrianLuar).jumlah = 0;
+                    for (j = 0; j <= CKata.Length-1; j++){
+                        InfoTail(*AntrianLuar).jumlah *= 10;
+                        InfoTail(*AntrianLuar).jumlah += (int)CKata.TabKata[i] - 48;
+                    }
+                    while (CC == ' ' || CC == '\n'){    
+                        ADV();
+                    }
+                    ADVKATA();
+                    InfoTail(*AntrianLuar).patience = 0;
+                    for (j = 0; j <= CKata.Length-1; j++){
+                        InfoTail(*AntrianLuar).patience *= 10;
+                        InfoTail(*AntrianLuar).patience += (int)CKata.TabKata[i] - 48;
+                    }
+                    while (CC == ' ' || CC == '\n'){    
+                        ADV();
+                    }
+                    ADVKATA();
+                    InfoTail(*AntrianLuar).qpatience = 0;
+                    for (j = 0; j <= CKata.Length-1; j++){
+                        InfoTail(*AntrianLuar).qpatience *= 10;
+                        InfoTail(*AntrianLuar).qpatience += (int)CKata.TabKata[i] - 48;
+                    }
+                    while (CC == ' ' || CC == '\n'){    
+                        ADV();
+                    }
+                    ADVKATA();
+                    for (j = 0; j <= CKata.Length-1; j++){
+                        if (CKata.TabKata[j] == '_'){
+                            CKata.TabKata[j] = ' ';
+                        }
+                    }
+                    strcpy(InfoTail(*AntrianLuar).order,CKata.TabKata);
+                    InfoTail(*AntrianLuar).isi = false;
+                }
+            }
+            else {
+                Head(*AntrianLuar) = 0;
+            }
+        }
+        else if (strcmp(CKata.TabKata, "Customer") == 0){
+            for (i = 1; i <= 12; i++){
+                while (CC == ' '){    
+                    ADV();
+                }
+                ADVKATA();
+                arrayCust1(*arrayCust,i).jumlah = 0;
+                for (j = 0; j <= CKata.Length-1; j++){
+                    arrayCust1(*arrayCust,i).jumlah *= 10;
+                    arrayCust1(*arrayCust,i).jumlah += (int)CKata.TabKata[i] - 48;
+                }
+                while (CC == ' '){    
+                    ADV();
+                }
+                ADVKATA();
+                arrayCust1(*arrayCust,i).patience = 0;
+                for (j = 0; j <= CKata.Length-1; j++){
+                    arrayCust1(*arrayCust,i).patience *= 10;
+                    arrayCust1(*arrayCust,i).patience += (int)CKata.TabKata[i] - 48;
+                }
+                while (CC == ' '){    
+                    ADV();
+                }
+                ADVKATA();
+                arrayCust1(*arrayCust,i).qpatience = 0;
+                for (j = 0; j <= CKata.Length-1; j++){
+                    arrayCust1(*arrayCust,i).qpatience *= 10;
+                    arrayCust1(*arrayCust,i).qpatience += (int)CKata.TabKata[i] - 48;
+                }
+                while (CC == ' '){    
+                    ADV();
+                }
+                ADVKATA();
+                for (j = 0; j <= CKata.Length-1; j++){
+                    if (CKata.TabKata[j] == '_'){
+                        CKata.TabKata[j] = ' ';
+                    }
+                }
+                strcpy(arrayCust1(*arrayCust,i).order,CKata.TabKata);
+                arrayCust1(*arrayCust,i).isi = true;
+            }
+        }
+        else if (strcmp(CKata.TabKata, "Order") == 0){
+            for (i = 1; i <= 12; i++){
+                while (CC == ' ' || CC == '\n'){    
+                    ADV();
+                }
+                ADVKATA();
+                for (j = 0; j <= CKata.Length-1; j++){
+                    if (CKata.TabKata[j] == '_'){
+                        CKata.TabKata[j] = ' ';
+                    }
+                }
+                strcpy(DaftarOrder1(*DaftarOrder,i),CKata.TabKata);
+            }
+        }
+        else if (strcmp(CKata.TabKata, "Hand") == 0){
+            while (CC == ' ' || CC == '\n'){    
+                ADV();
+            }
+            ADVKATA();
+            N = 0;
+            for (i = 0; i <= CKata.Length-1; i++){
+                N *= 10;
+                N += (int)CKata.TabKata[i] - 48;
+            }
+            Top((*P).Hand) = N;
+            if (N != 0){
+                for (i = 1; i <= N; i++){
+                    while (CC == ' ' || CC == '\n'){    
+                        ADV();
+                    }
+                    ADVKATA();
+                    for (j = 0; j <= CKata.Length-1; j++){
+                        if (CKata.TabKata[j] == '_'){
+                            CKata.TabKata[j] = ' ';
+                        }
+                    }
+                    strcpy(((*P).Hand).TI[i],CKata.TabKata);
+                }
+            }
+        }
+        else if (strcmp(CKata.TabKata, "FoodStack") == 0){
+            while (CC == ' ' || CC == '\n'){    
+                ADV();
+            }
+            ADVKATA();
+            N = 0;
+            for (i = 0; i <= CKata.Length-1; i++){
+                N *= 10;
+                N += (int)CKata.TabKata[i] - 48;
+            }
+            Top((*P).FoodStack) = N;
+            if (N != 0){
+                for (i = 1; i <= N; i++){
+                    while (CC == ' ' || CC == '\n'){    
+                        ADV();
+                    }
+                    ADVKATA();
+                    for (j = 0; j <= CKata.Length-1; j++){
+                        if (CKata.TabKata[j] == '_'){
+                            CKata.TabKata[j] = ' ';
+                        }
+                    }
+                    strcpy(((*P).FoodStack).TI[i],CKata.TabKata);
+                }
+            }
+        }
         while (CC == ' ' || CC == '\n'){    
             ADV();
         }
