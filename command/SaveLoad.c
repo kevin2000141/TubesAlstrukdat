@@ -242,28 +242,28 @@ void Load (Player *P, Queue *AntrianLuar, ruang *ruangan, arrayC *arrayCust, Daf
                     ADV();
                 }
                 ADVKATA();
-                arrayCust1(*arrayCust,i).jumlah = 0;
+                arrayCust(*arrayCust,i).jumlah = 0;
                 for (j = 0; j <= CKata.Length-1; j++){
-                    arrayCust1(*arrayCust,i).jumlah *= 10;
-                    arrayCust1(*arrayCust,i).jumlah += (int)CKata.TabKata[i] - 48;
+                    arrayCust(*arrayCust,i).jumlah *= 10;
+                    arrayCust(*arrayCust,i).jumlah += (int)CKata.TabKata[i] - 48;
                 }
                 while (CC == ' '){    
                     ADV();
                 }
                 ADVKATA();
-                arrayCust1(*arrayCust,i).patience = 0;
+                arrayCust(*arrayCust,i).patience = 0;
                 for (j = 0; j <= CKata.Length-1; j++){
-                    arrayCust1(*arrayCust,i).patience *= 10;
-                    arrayCust1(*arrayCust,i).patience += (int)CKata.TabKata[i] - 48;
+                    arrayCust(*arrayCust,i).patience *= 10;
+                    arrayCust(*arrayCust,i).patience += (int)CKata.TabKata[i] - 48;
                 }
                 while (CC == ' '){    
                     ADV();
                 }
                 ADVKATA();
-                arrayCust1(*arrayCust,i).qpatience = 0;
+                arrayCust(*arrayCust,i).qpatience = 0;
                 for (j = 0; j <= CKata.Length-1; j++){
-                    arrayCust1(*arrayCust,i).qpatience *= 10;
-                    arrayCust1(*arrayCust,i).qpatience += (int)CKata.TabKata[i] - 48;
+                    arrayCust(*arrayCust,i).qpatience *= 10;
+                    arrayCust(*arrayCust,i).qpatience += (int)CKata.TabKata[i] - 48;
                 }
                 while (CC == ' '){    
                     ADV();
@@ -274,8 +274,8 @@ void Load (Player *P, Queue *AntrianLuar, ruang *ruangan, arrayC *arrayCust, Daf
                         CKata.TabKata[j] = ' ';
                     }
                 }
-                strcpy(arrayCust1(*arrayCust,i).order,CKata.TabKata);
-                arrayCust1(*arrayCust,i).isi = true;
+                strcpy(arrayCust(*arrayCust,i).order,CKata.TabKata);
+                arrayCust(*arrayCust,i).isi = true;
             }
         }
         else if (strcmp(CKata.TabKata, "Order") == 0){
@@ -289,7 +289,7 @@ void Load (Player *P, Queue *AntrianLuar, ruang *ruangan, arrayC *arrayCust, Daf
                         CKata.TabKata[j] = ' ';
                     }
                 }
-                strcpy(DaftarOrder1(*DaftarOrder,i),CKata.TabKata);
+                strcpy(DaftarOrder(*DaftarOrder,i),CKata.TabKata);
             }
         }
         else if (strcmp(CKata.TabKata, "Hand") == 0){

@@ -209,12 +209,12 @@ typedef struct{
 	KataString Daftar[13]; //Daftar makanan yang dipesan, meja sesuai indeks
 } DaftarO;
 DaftarO DaftarOrder; 
-#define DaftarOrder1(a,i) (a).Daftar[i]
+#define DaftarOrder(a,i) (a).Daftar[i]
 typedef struct {
 	Customer Cust[13]; //Salinan customer ke meja
 } arrayC;
 arrayC arrayCust;
-#define arrayCust1(a,i) (a).Cust[i]
+#define arrayCust(a,i) (a).Cust[i]
 typedef struct {
 	char ruanganan[5][9][9];
 } ruang;
