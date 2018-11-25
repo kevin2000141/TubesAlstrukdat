@@ -10,7 +10,50 @@
 
 // (int)strtol(<string>, (char **)NULL, 10);
 
+void newsave(KataString Nama){
+    FILE *fptr1, *fptr2; 
+    char Namafile[1000];
+    char c; 
+    snprintf(Namafile, sizeof(Namafile), "../File/Save/%s.txt", Nama);
+    fptr1 = fopen(Namafile, "w");
+    if (fptr1 == NULL) {
+        perror("fopen()");
+    }
+    else {
+        fptr2 = fopen("../File/Save/newsave.txt","r");
+        c = fgetc(fptr2); 
+        while (c != EOF) 
+        { 
+            fputc(c, fptr1); 
+            c = fgetc(fptr2); 
+        }
+        fclose(fptr2);
+    }
+    fclose(fptr1);
+}
 
+boolean ceksave(KataString Nama){
+    FILE *fptr1, *fptr2; 
+    char Namafile[1000];
+    char c; 
+    snprintf(Namafile, sizeof(Namafile), "../File/Save/%s.txt", Nama);
+    fptr1 = fopen(Namafile, "r");
+    if (fptr1 == NULL) {
+        return false;
+    }
+    else {
+        fptr2 = fopen("../File/pitakar.txt","w");
+        c = fgetc(fptr1); 
+        while (c != EOF) 
+        { 
+            fputc(c, fptr2); 
+            c = fgetc(fptr1); 
+        }
+        fclose(fptr2);
+        return true;
+    }
+    fclose(fptr1);
+}
 
 void Load (Player *P, Queue *AntrianLuar, ruang *ruangan, arrayC *arrayCust, DaftarO *DaftarOrder){
     // typedef char peta[9][9];
@@ -30,7 +73,7 @@ void Load (Player *P, Queue *AntrianLuar, ruang *ruangan, arrayC *arrayCust, Daf
                 ADV();
             }
             ADVKATA();
-            strcpy(Name(*P),CKata.TabKata);
+            // strcpy(Name(*P),CKata.TabKata);
         }
         else if (strcmp(CKata.TabKata, "Position") == 0){
             while (CC == ' ' || CC == '\n'){    
@@ -357,7 +400,7 @@ void Save (Player P, Queue AntrianLuar, ruang ruangan, arrayC arrayCust, DaftarO
     // char str[] = P.Nama;
     char Namafile[1000];
     snprintf(Namafile, sizeof(Namafile), "../File/Save/%s.txt", Name(P));
-    printf("%s", Namafile);
+    // printf("%s", Namafile);
     fptr = fopen(Namafile, "w");
     if (fptr == NULL) {
         perror("fopen()");
